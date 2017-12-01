@@ -8,7 +8,11 @@ mysql> SELECT @@hostname hostname;
 | nodo1    |
 +----------+
 1 row in set (0.01 sec)
+<br>
+</code>
 * A command and output that reports the database server version
+<br>
+<code>
 mysql> SHOW VARIABLES LIKE "%version%";
 +-------------------------+------------------------------+
 | Variable_name           | Value                        |
@@ -27,6 +31,7 @@ mysql> SHOW VARIABLES LIKE "%version%";
 <br>
 * A command and output that lists all the databases in the server
 <br>
+<code>
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -44,3 +49,4 @@ mysql> show databases;
 | sys                |
 +--------------------+
 11 rows in set (0.00 sec)
+</code>
