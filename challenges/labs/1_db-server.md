@@ -1,5 +1,4 @@
 * A command and output that shows the hostname of your database server
-<br>
 <code>
 mysql> SELECT @@hostname hostname;
 +----------+
@@ -8,8 +7,8 @@ mysql> SELECT @@hostname hostname;
 | nodo1    |
 +----------+
 1 row in set (0.01 sec)
-<br>
 </code>
+<br>
 * A command and output that reports the database server version
 <br>
 <code>
