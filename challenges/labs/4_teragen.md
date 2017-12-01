@@ -1,5 +1,6 @@
 * The full teragen command and output
-`HADOOP_USER_NAME=hdfs hadoop jar hadoop-examples.jar teragen -D dfs.block.size=33554432 -D mapreduce.job.maps=12 65536000 /user/saturn/results/tgen`
+`HADOOP_USER_NAME=hdfs hadoop jar hadoop-examples.jar teragen -D dfs.block.size=33554432 -D mapreduce.job.maps=12 65536000 /user/saturn/results/tgen` <br>
+
 17/12/01 19:54:05 INFO client.RMProxy: Connecting to ResourceManager at nodo1.rodo.com/10.0.1.4:8032
 17/12/01 19:54:05 INFO terasort.TeraSort: Generating 65536000 using 12
 17/12/01 19:54:05 INFO mapreduce.JobSubmitter: number of splits:12
@@ -64,4 +65,49 @@
 		Bytes Read=0
 	File Output Format Counters 
 		Bytes Written=6553600000
-    
+<br>
+* The command and output of hdfs dfs -ls /user/saturn/tgen
+`HADOOP_USER_NAME=hdfs hdfs dfs -ls -h /user/saturn/results/tgen`
+<br>
+Found 13 items
+-rw-r--r--   3 hdfs supergroup          0 2017-12-01 19:54 /user/saturn/results/tgen/_SUCCESS
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00000
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00001
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00002
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00003
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00004
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00005
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00006
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00007
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00008
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00009
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00010
+-rw-r--r--   3 hdfs supergroup    520.8 M 2017-12-01 19:54 /user/saturn/results/tgen/part-m-00011
+<br>
+* The command and output of hadoop fsck -blocks /user/saturn
+`HADOOP_USER_NAME=hdfs hadoop fsck -blocks /user/saturn/results`
+DEPRECATED: Use of this script to execute hdfs command is deprecated.
+Instead use the hdfs command for it.
+
+Connecting to namenode via http://nodo1.rodo.com:50070
+FSCK started by hdfs (auth:SIMPLE) from /10.0.1.5 for path /user/saturn/results at Fri Dec 01 19:58:28 UTC 2017
+.............Status: HEALTHY
+ Total size:	6553600000 B
+ Total dirs:	2
+ Total files:	13
+ Total symlinks:		0
+ Total blocks (validated):	204 (avg. block size 32125490 B)
+ Minimally replicated blocks:	204 (100.0 %)
+ Over-replicated blocks:	0 (0.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Mis-replicated blocks:		0 (0.0 %)
+ Default replication factor:	3
+ Average block replication:	3.0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+ Number of data-nodes:		3
+ Number of racks:		1
+FSCK ended at Fri Dec 01 19:58:28 UTC 2017 in 9 milliseconds
+
+The filesystem under path '/user/saturn/results' is HEALTHY
+
