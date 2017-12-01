@@ -1,4 +1,6 @@
 * A command and output that shows the hostname of your database server
+<br>
+<code>
 mysql> SELECT @@hostname hostname;
 +----------+
 | hostname |
@@ -21,7 +23,10 @@ mysql> SHOW VARIABLES LIKE "%version%";
 | version_compile_os      | Linux                        |
 +-------------------------+------------------------------+
 8 rows in set (0.01 sec)
+</code>
+<br>
 * A command and output that lists all the databases in the server
+<br>
 mysql> show databases;
 +--------------------+
 | Database           |
