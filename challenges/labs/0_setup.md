@@ -157,4 +157,9 @@
       * `more /etc/group | grep ets`<br>
       * `comets:x:1001:haley`<br>
       * `planets:x:1002:saturn`
-
+      
+* List the /etc/passwd entries for saturn and haley
+      * more /etc/passwd | grep saturn 
+      * saturn:x:2800:2800::/home/saturn:/bin/bash
+      * more /etc/passwd | grep haley
+      * haley:x:2900:2900::/home/haley:/bin/bash
